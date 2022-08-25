@@ -1,0 +1,12 @@
+{
+  "name": "root",
+  "packageManager": "yarn@3.2.3",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "shared/*",
+      "sites/*"
+    ]
+  }
+}

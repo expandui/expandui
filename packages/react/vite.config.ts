@@ -14,7 +14,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@expandui/utils': '@expandui/utils/src/index.ts',
+      hooks: './src/hooks',
+      '@shared/utils': '@shared/utils/src/index.ts',
     },
   },
   build: {

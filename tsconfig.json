@@ -1,0 +1,19 @@
+{
+  "references": [
+    {
+      "path": "./packages/core"
+    },
+    {
+      "path": "./packages/react"
+    },
+    {
+      "path": "./packages/svelte"
+    },
+    {
+      "path": "./packages/vue"
+    },
+    {
+      "path": "./shared/utils"
+    }
+  ]
+}

@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "eslint --no-error-on-unmatched-pattern --fix --ext .js,.jsx,.ts,.tsx src/**"
+    "sites:build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@expandui/react": "*",

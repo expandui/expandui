@@ -13,9 +13,18 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "baseUrl": ".",
+    "composite": true,
+    "jsx": "react-jsx",
+    "paths": {
+      "hooks/*": ["./src/hooks/*"],
+      "types/*": ["./types/*"],
+    }
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src", "types"],
+  "references": [
+    { "path": "./tsconfig.node.json" },
+    { "path": "../core" },
+    { "path": "../../shared/utils" }
+  ]
 }

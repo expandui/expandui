@@ -2,7 +2,11 @@
   "name": "@expandui/react",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:expandui/expandui.git",
+    "directory": "packages/react"
+  },
   "main": "./dist/expandui-react.umd.js",
   "module": "./dist/expandui-react.es.js",
   "types": "./dist/index.d.ts",
@@ -18,7 +22,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@expandui/utils": "*",
+    "@expandui/core": "*",
+    "@shared/utils": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

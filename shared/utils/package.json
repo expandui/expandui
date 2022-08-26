@@ -1,14 +1,12 @@
 {
-  "name": "@expandui/utils",
+  "name": "@shared/utils",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "./dist/expand-ui-utils.umd.js",
-  "module": "./dist/expand-ui-utils.es.js",
-  "types": "./dist/index.d.ts",
+  "main": "./src/index.ts",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && tsc",
+    "utils:build": "vite build && tsc",
     "preview": "vite preview"
   },
   "devDependencies": {

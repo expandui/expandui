@@ -7,6 +7,7 @@
     "url": "git@github.com:expandui/expandui.git",
     "directory": "packages/svelte"
   },
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -14,8 +15,10 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
+    "@expandui/core": "*",
     "@sveltejs/vite-plugin-svelte": "^1.0.1",
     "@tsconfig/svelte": "^3.0.0",
+    "eslint-plugin-svelte3": "^4.0.0",
     "svelte": "^3.49.0",
     "svelte-check": "^2.8.0",
     "svelte-preprocess": "^4.10.7",

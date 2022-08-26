@@ -21,10 +21,7 @@ export const TabsPanel = forwardRef(
       <Component
         {...rest}
         ref={ref}
-        className={createClassString(
-          'eui-tabs-panel',
-          className ? className : ''
-        )}
+        className={createClassString('eui-tabs__panel', className)}
       />
     )
   }

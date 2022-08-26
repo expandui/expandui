@@ -21,10 +21,7 @@ export const AccordionContent = forwardRef(
       <Component
         {...rest}
         ref={ref}
-        className={createClassString(
-          'eui-accordion__content',
-          className ? className : ''
-        )}
+        className={createClassString('eui-accordion__content', className)}
       />
     )
   }

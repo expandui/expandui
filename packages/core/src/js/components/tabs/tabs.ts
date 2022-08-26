@@ -2,10 +2,10 @@ import uniqueId from 'lodash.uniqueid'
 import { arrowKeys } from '../../utils'
 
 // Data properties
-const TABS = 'eui-tabs'
-const TABS_LIST = 'eui-tabs-list'
-const TABS_TOGGLE = 'eui-tabs-toggle'
-const TABS_PANEL = 'eui-tabs-panel'
+export const TABS = 'eui-tabs'
+export const TABS_LIST = `${TABS}__list`
+export const TABS_PANEL = `${TABS}__panel`
+export const TABS_TOGGLE = `${TABS}__toggle`
 
 // Checks if element is tabs
 function isTabs(el: Element) {

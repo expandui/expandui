@@ -21,10 +21,7 @@ export const ModalContent = forwardRef(
       <Component
         {...rest}
         ref={ref}
-        className={createClassString(
-          'eui-modal-content',
-          className ? className : ''
-        )}
+        className={createClassString('eui-modal__content', className)}
       />
     )
   }

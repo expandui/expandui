@@ -1,8 +1,8 @@
 import { forwardRef } from 'react'
 import { createClassString } from '@shared/utils'
 
+import Button from '../Button'
 import Content from '../Content'
-import Toggle from '../Toggle'
 
 import type { PolymorphicComponentPropsWithRef, PolymorphicRef } from 'types'
 
@@ -10,7 +10,7 @@ interface Props {
   children?: React.ReactNode
   className?: string
   expanded?: boolean
-  toggle?: string
+  heading?: string
 }
 
 export type AccordionItemProps<C extends React.ElementType> =
@@ -23,7 +23,7 @@ export const AccordionItem = forwardRef(
       children,
       className,
       expanded,
-      toggle,
+      heading,
       ...rest
     }: AccordionItemProps<C>,
     ref?: PolymorphicRef<C>
@@ -37,12 +37,12 @@ export const AccordionItem = forwardRef(
         className={createClassString(
           'eui-accordion__item',
           expanded ? 'expanded' : '',
-          className ? className : ''
+          className
         )}
       >
-        {toggle ? (
+        {heading ? (
           <>
-            <Toggle>{toggle}</Toggle>
+            <Button>{heading}</Button>
             <Content>{children}</Content>
           </>
         ) : (

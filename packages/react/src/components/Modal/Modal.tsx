@@ -3,11 +3,17 @@ import { modal } from '@expandui/core'
 import { createClassString } from '@shared/utils'
 import useForwardedRef from 'hooks/useForwardedRef'
 
+import Content from './Content'
+import Heading from './Heading'
+
 import type { PolymorphicComponentPropsWithRef, PolymorphicRef } from 'types'
 
 interface Props {
+  children?: React.ReactNode
   className?: string
   forceAction?: boolean
+  heading?: string
+  id: string
 }
 
 export type ModalProps<C extends React.ElementType> =
@@ -15,7 +21,7 @@ export type ModalProps<C extends React.ElementType> =
 
 export const Modal = forwardRef(
   <C extends React.ElementType = 'div'>(
-    { as, className, forceAction, ...rest }: ModalProps<C>,
+    { as, children, className, forceAction, heading, ...rest }: ModalProps<C>,
     ref?: PolymorphicRef<C>
   ) => {
     const Component = as || 'div'
@@ -40,9 +46,18 @@ export const Modal = forwardRef(
         className={createClassString(
           'eui-modal',
           forceAction ? 'force-action' : '',
-          className ? className : ''
+          className
         )}
-      />
+      >
+        {heading ? (
+          <>
+            <Heading>{heading}</Heading>
+            <Content>{children}</Content>
+          </>
+        ) : (
+          <>{children}</>
+        )}
+      </Component>
     )
   }
 )

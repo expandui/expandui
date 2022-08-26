@@ -36,7 +36,7 @@ export const Tabs = forwardRef(
       <Component
         {...rest}
         ref={safeRef}
-        className={createClassString('eui-tabs', className ? className : '')}
+        className={createClassString('eui-tabs', className)}
       />
     )
   }

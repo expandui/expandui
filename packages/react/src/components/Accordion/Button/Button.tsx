@@ -9,26 +9,27 @@ interface Props {
   className?: string
 }
 
-export type TabsToggleProps<C extends React.ElementType> =
+export type AccordionButtonProps<C extends React.ElementType> =
   PolymorphicComponentPropsWithRef<C, Props>
 
-export const TabsToggle = forwardRef(
+export const AccordionButton = forwardRef(
   <C extends React.ElementType = typeof Button>(
-    { as, className, ...rest }: TabsToggleProps<C>,
+    { as, className, ...rest }: AccordionButtonProps<C>,
     ref?: PolymorphicRef<C>
   ) => {
     const Component = as || Button
 
     return (
       <Component
+        type="button"
         {...rest}
         ref={ref}
-        className={createClassString('eui-tabs__toggle', className)}
+        className={createClassString('eui-accordion__button', className)}
       />
     )
   }
 )
 
-TabsToggle.displayName = 'TabsToggle'
+AccordionButton.displayName = 'AccordionButton'
 
-export default TabsToggle
+export default AccordionButton

@@ -11,12 +11,12 @@ interface Props {
   className?: string
 }
 
-type ButtonProps<C extends React.ElementType> =
+export type ButtonGroupProps<C extends React.ElementType> =
   PolymorphicComponentPropsWithRef<C, Props>
 
 const ButtonGroup = forwardRef(
   <C extends React.ElementType = 'div'>(
-    { as, children, className, ...rest }: ButtonProps<C>,
+    { as, children, className, ...rest }: ButtonGroupProps<C>,
     ref?: PolymorphicRef<C>
   ) => {
     const Component = as || 'div'
@@ -24,7 +24,7 @@ const ButtonGroup = forwardRef(
     return (
       <Component
         {...rest}
-        className={createClassString(['eui-button-group', className])}
+        className={createClassString('eui-button__group', className)}
         ref={ref}
       >
         {children}

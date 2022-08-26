@@ -2,21 +2,23 @@ import { forwardRef } from 'react'
 import { createClassString } from '@shared/utils'
 
 import type {
+  ColorVariant,
   PolymorphicComponentPropsWithRef,
   PolymorphicRef,
-} from '../../../types'
+} from 'types'
 
 interface Props {
   children?: React.ReactNode
   className?: string
+  variant?: ColorVariant
 }
 
-type ButtonProps<C extends React.ElementType> =
+export type ButtonProps<C extends React.ElementType> =
   PolymorphicComponentPropsWithRef<C, Props>
 
 const Button = forwardRef(
   <C extends React.ElementType = 'button'>(
-    { as, children, className, ...rest }: ButtonProps<C>,
+    { as, children, className, variant = 'primary', ...rest }: ButtonProps<C>,
     ref?: PolymorphicRef<C>
   ) => {
     const Component = as || 'button'
@@ -24,7 +26,7 @@ const Button = forwardRef(
     return (
       <Component
         {...rest}
-        className={createClassString('eui-button', className)}
+        className={createClassString('eui-button', `v-${variant}`, className)}
         ref={ref}
       >
         {children}

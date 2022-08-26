@@ -5,8 +5,8 @@ import { focusTrap } from '../../utils'
 const BODY_MODAL_OPEN = 'eui-modal-open'
 const MODAL = 'eui-modal'
 const MODAL_FORCE_ACTION = 'eui-modal-force-action'
-const MODAL_HEADING = 'eui-modal-heading'
-const MODAL_CONTENT = 'eui-modal-content'
+const MODAL_HEADING = `${MODAL}__heading`
+const MODAL_CONTENT = `${MODAL}__content`
 const CLOSE_MODAL = 'data-modal-close'
 
 // Checks if element is modal

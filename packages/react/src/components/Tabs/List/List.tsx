@@ -22,10 +22,7 @@ export const TabsList = forwardRef(
       <Component
         {...rest}
         ref={ref}
-        className={createClassString(
-          'eui-tabs-list',
-          className ? className : ''
-        )}
+        className={createClassString('eui-tabs__list', className)}
         aria-orientation={vertical ? 'vertical' : 'horizontal'}
       />
     )

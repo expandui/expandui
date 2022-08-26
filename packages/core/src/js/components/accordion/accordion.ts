@@ -1,11 +1,11 @@
 import uniqueId from 'lodash.uniqueid'
 
 // Data properties
-const ACCORDION = 'eui-accordion'
-const ACCORDION_ITEM = `${ACCORDION}__item`
-const ACCORDION_EXPANDED = 'expanded'
-const ACCORDION_BUTTON = `${ACCORDION}__button`
-const ACCORDION_CONTENT = `${ACCORDION}__content`
+export const ACCORDION = 'eui-accordion'
+export const ACCORDION_BUTTON = `${ACCORDION}__button`
+export const ACCORDION_CONTENT = `${ACCORDION}__content`
+export const ACCORDION_ITEM = `${ACCORDION}__item`
+export const ACCORDION_EXPANDED = 'expanded'
 
 // Checks if element is accordion
 function isAccordion(el: Element) {

@@ -1,18 +1,18 @@
-import tabs from './tabs'
+import tabs, { TABS, TABS_LIST, TABS_PANEL, TABS_TOGGLE } from './tabs'
 
 function getContainer() {
   const div = document.createElement('div')
-  div.classList.add('eui-tabs')
+  div.classList.add(TABS)
   div.innerHTML = `
-    <div class="eui-tabs-list">
-      <button class="eui-tabs-toggle">One</button>
-      <button class="eui-tabs-toggle">Two</button>
-      <button class="eui-tabs-toggle">Three</button>
+    <div class="${TABS_LIST}">
+      <button class="${TABS_TOGGLE}">One</button>
+      <button class="${TABS_TOGGLE}">Two</button>
+      <button class="${TABS_TOGGLE}">Three</button>
     </div>
 
-    <div class="eui-tabs-panel">Content one</div>
-    <div class="eui-tabs-panel">Content two</div>
-    <div class="eui-tabs-panel">Content three</div>
+    <div class="${TABS_PANEL}">Content one</div>
+    <div class="${TABS_PANEL}">Content two</div>
+    <div class="${TABS_PANEL}">Content three</div>
   `
 
   return div
@@ -24,10 +24,10 @@ describe('Tabs', () => {
   // Init accordion
   tabs.on(container)
 
-  const list = container.querySelector('.eui-tabs-list')
+  const list = container.querySelector(`.${TABS_LIST}`)
 
-  const toggles = container.querySelectorAll('.eui-tabs-toggle')
-  const panels = container.querySelectorAll('.eui-tabs-panel')
+  const toggles = container.querySelectorAll(`.${TABS_TOGGLE}`)
+  const panels = container.querySelectorAll(`.${TABS_PANEL}`)
 
   if (!list) {
     throw Error('Elements not found')

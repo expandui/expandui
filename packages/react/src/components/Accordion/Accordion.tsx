@@ -40,7 +40,7 @@ export const Accordion = forwardRef(
         className={createClassString(
           'eui-accordion',
           multiselect ? 'multiselect' : '',
-          className ? className : ''
+          className
         )}
       />
     )

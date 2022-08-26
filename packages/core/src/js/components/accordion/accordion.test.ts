@@ -1,24 +1,30 @@
-import accordion from './accordion'
+import accordion, {
+  ACCORDION,
+  ACCORDION_BUTTON,
+  ACCORDION_CONTENT,
+  ACCORDION_EXPANDED,
+  ACCORDION_ITEM,
+} from './accordion'
 
 function getContainer() {
   const div = document.createElement('div')
-  div.classList.add('eui-accordion')
+  div.classList.add(ACCORDION)
   div.innerHTML = `
-    <div class="eui-accordion__item">
-      <button class="eui-accordion__button">Heading</button>
-      <div class="eui-accordion__content">
+    <div class="${ACCORDION_ITEM}">
+      <button class="${ACCORDION_BUTTON}">Heading</button>
+      <div class="${ACCORDION_CONTENT}">
         Content
       </div>
     </div>
-    <div class="eui-accordion__item">
-      <button class="eui-accordion__button">Heading</button>
-      <div class="eui-accordion__content">
+    <div class="${ACCORDION_ITEM}">
+      <button class="${ACCORDION_BUTTON}">Heading</button>
+      <div class="${ACCORDION_CONTENT}">
         Content
       </div>
     </div>
-    <div class="eui-accordion__item">
-      <button class="eui-accordion__button">Heading</button>
-      <div class="eui-accordion__content">
+    <div class="${ACCORDION_ITEM}">
+      <button class="${ACCORDION_BUTTON}">Heading</button>
+      <div class="${ACCORDION_CONTENT}">
         Content
       </div>
     </div>
@@ -33,12 +39,12 @@ describe('Accordion', () => {
   // Init accordion
   accordion.on(container)
 
-  const firstItem = container.querySelector('.eui-accordion__item')
-  const firstButton = firstItem?.querySelector('.eui-accordion__button')
-  const firstContent = firstItem?.querySelector('.eui-accordion__content')
+  const firstItem = container.querySelector(`.${ACCORDION_ITEM}`)
+  const firstButton = firstItem?.querySelector(`.${ACCORDION_BUTTON}`)
+  const firstContent = firstItem?.querySelector(`.${ACCORDION_CONTENT}`)
 
-  const secondItem = container.querySelectorAll('.eui-accordion__item')[1]
-  const secondButton = secondItem?.querySelector('.eui-accordion__button')
+  const secondItem = container.querySelectorAll(`.${ACCORDION_ITEM}`)[1]
+  const secondButton = secondItem?.querySelector(`.${ACCORDION_BUTTON}`)
 
   if (
     !firstItem ||
@@ -61,7 +67,7 @@ describe('Accordion', () => {
     // Toggle accordion
     ;(firstButton as HTMLElement).click()
 
-    expect(firstItem.classList.contains('expanded')).toBeTruthy()
+    expect(firstItem.classList.contains(ACCORDION_EXPANDED)).toBeTruthy()
     expect(firstButton.getAttribute('aria-expanded')).toEqual('true')
     expect(firstContent.getAttribute('aria-hidden')).toEqual('false')
   })
@@ -70,7 +76,7 @@ describe('Accordion', () => {
     // Toggle accordion
     ;(firstButton as HTMLElement).click()
 
-    expect(firstItem.classList.contains('expanded')).toBeFalsy()
+    expect(firstItem.classList.contains(ACCORDION_EXPANDED)).toBeFalsy()
     expect(firstButton.getAttribute('aria-expanded')).toEqual('false')
     expect(firstContent.getAttribute('aria-hidden')).toEqual('true')
   })
@@ -78,10 +84,10 @@ describe('Accordion', () => {
   test('toggle closes siblings', async () => {
     ;(firstButton as HTMLElement).click()
 
-    expect(firstItem.classList.contains('expanded')).toBeTruthy()
+    expect(firstItem.classList.contains(ACCORDION_EXPANDED)).toBeTruthy()
     ;(secondButton as HTMLElement).click()
 
-    expect(secondItem.classList.contains('expanded')).toBeTruthy()
-    expect(firstItem.classList.contains('expanded')).toBeFalsy()
+    expect(secondItem.classList.contains(ACCORDION_EXPANDED)).toBeTruthy()
+    expect(firstItem.classList.contains(ACCORDION_EXPANDED)).toBeFalsy()
   })
 })

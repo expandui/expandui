@@ -2,7 +2,11 @@
   "name": "@expandui/vue",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:expandui/expandui.git",
+    "directory": "packages/vue"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",

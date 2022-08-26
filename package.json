@@ -10,16 +10,27 @@
     ]
   },
   "scripts": {
-    "lint": "eslint --fix --ext js,jsx,ts,tsx ."
+    "test": "yarn workspaces foreach -pv --topological-dev run test",
+    "build": "yarn workspaces foreach -pv --topological-dev run build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "version:bump": "yarn version check --interactive && yarn version apply --all",
+    "core:dev": "yarn workspace @expandui/core run dev",
+    "core:build": "yarn workspace @expandui/core run build",
+    "react:dev": "yarn workspace @expandui/react run dev",
+    "react:build": "yarn workspace @expandui/react run build",
+    "svelte:dev": "yarn workspace @expandui/svelte run dev",
+    "svelte:build": "yarn workspace @expandui/svelte run build",
+    "vue:dev": "yarn workspace @expandui/vue run dev",
+    "vue:build": "yarn workspace @expandui/vue run build"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.35.1",
     "@typescript-eslint/parser": "^5.35.1",
     "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-import-resolver-typescript": "^3.5.0",
-    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.2"
   }
 }

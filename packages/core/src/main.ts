@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import './style.css'
 import typescriptLogo from './typescript.svg'
 import { setupCounter } from './counter'

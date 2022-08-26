@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite';
-import path from 'node:path';
-import react from '@vitejs/plugin-react';
-import dts from 'vite-plugin-dts';
+import { defineConfig } from 'vite'
+import path from 'node:path'
+import react from '@vitejs/plugin-react'
+import dts from 'vite-plugin-dts'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,8 +14,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@expandui/utils': '@expandui/utils/src/index.ts'
-    }
+      '@expandui/utils': '@expandui/utils/src/index.ts',
+    },
   },
   build: {
     lib: {

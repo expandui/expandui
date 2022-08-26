@@ -1,1 +1,1 @@
-export { createClassString } from './createClassString';
+export { createClassString } from './createClassString'

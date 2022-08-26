@@ -2,14 +2,39 @@
   "name": "@expandui/core",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:expandui/expandui.git",
+    "directory": "packages/core"
+  },
+  "main": "./dist/expandui-core.umd.js",
+  "module": "./dist/expandui-core.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/expandui-core.es.js",
+      "require": "./dist/expandui-core.umd.js"
+    },
+    "./scss/*": "./src/scss/*"
+  },
   "scripts": {
     "dev": "vite",
+    "test": "jest --verbose false",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@testing-library/dom": "^8.17.1",
+    "@types/jest": "^28.1.8",
+    "@types/lodash.uniqueid": "^4.0.7",
+    "jest": "^29.0.0",
+    "jest-environment-jsdom": "^29.0.0",
+    "ts-jest": "^28.0.8",
     "typescript": "^4.6.4",
-    "vite": "^3.0.7"
+    "vite": "^3.0.7",
+    "vite-plugin-dts": "^1.4.1"
+  },
+  "dependencies": {
+    "lodash.uniqueid": "^4.0.1"
   }
 }
